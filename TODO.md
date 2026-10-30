@@ -1,0 +1,7 @@
+
+
+## Solicitação adicional — pacote de hospedagem externa
+
+- [x] **Pacote GitHub para hospedagem funcional:** criar a pasta `deploy-github/` com Compose da aplicação e banco MySQL/MariaDB persistente, exemplo de variáveis sem segredos, Caddy/TLS automático, migração real do schema antes de iniciar a aplicação, healthcheck, scripts de implantação, backup e restauração de banco e instruções em português. Incluir workflow GitHub Actions válido para construir e publicar a imagem no GHCR; a implantação SSH em servidor deve ser opcional, exigir configuração explícita de secrets e nunca incluí-las no repositório. Incluir no projeto os oito recursos visuais usados pela página e trocar as rotas Manus Storage por caminhos locais, para que o deployment externo não dependa do Preview nem do storage da Manus. Documentar domínio/DNS, portas e requisitos de VPS, os serviços opcionais Manus para OAuth/notificações, e que GitHub Pages não hospeda o Express/MySQL. Não publicar nem enviar credenciais reais.
+  Evidência: `deploy-github/` e o workflow GHCR/SSH estão implementados; `pnpm check`, `pnpm build`, verificação do healthcheck, sintaxe dos scripts/YAML, health HTTP 200 e entrega dos oito WebPs locais foram confirmados.
+  Limite: esta sandbox não dispõe de Docker/Compose nem foi fornecido repositório GitHub, VPS, domínio ou secrets de deploy; por isso a imagem e a hospedagem não foram executadas. A implantação real permanece condicionada a esses recursos.

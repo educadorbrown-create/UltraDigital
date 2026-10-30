@@ -1,0 +1,12 @@
+node_modules
+dist
+.git
+.env
+.env.*
+.manus-logs
+*.manus-starter-*
+
+# Never send host-only secrets or database exports to the build context
+deploy-github/.env
+deploy-github/.docker-auth
+deploy-github/backups

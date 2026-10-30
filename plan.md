@@ -1,0 +1,5 @@
+
+
+## Hospedagem externa e pacote GitHub
+
+Esta revisão adiciona o diretório `deploy-github/` e `.github/workflows/deploy-github.yml` para GitHub Actions/Container Registry e execução opcional em um VPS escolhido pelo proprietário. Como o projeto usa Express/tRPC e MySQL, GitHub Pages não hospeda seu backend; o alvo é Docker Compose em servidor externo. O pacote instala MariaDB em volume persistente, aplica migrations Drizzle explicitamente antes da app, usa Caddy para TLS, inclui `healthcheck`, scripts de deploy/backup/restauração e `.env.example` sem segredos. O workflow compila e publica a imagem GHCR, porém só faz SSH se o proprietário criar os segredos do host e definir `DEPLOY_ENABLED=true`. O domínio, as credenciais e o servidor real não foram fornecidos, portanto nenhum deploy externo será executado por esta alteração. Oito WebPs usados pela home ficam versionados em `client/public/deploy-assets/` e substituem URLs de storage da Manus. Pedidos do formulário continuarão funcionais com o banco externalizado; autenticação OAuth e alertas da Manus são serviços opcionais documentados, sem simulações.
